@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    .content{
+        background-color: red;
+        height: 100vh;
+        position: relative;
+        box-sizing: border-box;
+    }
+    .box{
+        /* height: 100vh; */
+        background-color: #fff;
+        position: absolute;
+        top: 50%;
+        left: 27%;
+        border-radius: 10px;
+        padding: 20px;
+        transform: translate(50% , -50%);
+    }
+    .heading{
+        font-size: 35px;
+        text-align: center;
+    }
+    .box img{
+        width:40px;
+    }
+    #input{
+        width: 80%;
+        border: 1px solid black;
+        font-size: 22px;
+        border-radius: 5px;
+        padding-left:5px;
+        margin: 7px;
+    }
+    .button{
+        padding: 7px;
+        margin: 2px;
+        background-color: orangered;
+        border: none;
+        border-radius: 2px;
+    }
+    .listcontent{
+        padding: 20px;
+    }
+    ul li{
+        list-style: none;
+        padding: 10px 40px;
+        font-size: 22px;
+    }
+    ul li.checked::before{
+        content: "";
+        width: 30px;
+        height: 40px;
+        position: absolute;
+        background-image: url(assets/checked.png);
+        background-repeat: no-repeat;
+        /* background-size: contain; */
+    }
+    ul li::before{
+        content: "";
+        width: 25px;
+        height: 25px;
+        left: 20px;
+        position: absolute;
+        background-size: contain;
+        background-image: url(/assets/unchecked.pnga);
+    }
+    li{
+        list-style: none;
+        font-size: 22px;
+    }
+    .checked{
+        text-decoration: line-through;
+    }
+    span{
+        float: right;
+        position: absolute;
+        right: 50px;
+        background-color: rgb(202, 198, 192);
+        border-radius: 3px;
+        font-size: 18px;
+    }
+    span:hover{
+        color: red;
+        cursor: pointer;
+    }
+
+    @media (min-width:240px) and (max-width:479px){
+        .box{
+        /* height: 100vh; */
+        background-color: #fff;
+        position: absolute;
+        top: 3%;
+        left: 0%;
+        border-radius: 10px;
+        padding: 20px;
+        transform: translate(0% , 0%);
+    }
+    ul li.checked::before{
+        content: "";
+        width: 30px;
+        height: 40px;
+        position: absolute;
+        background-image: url(/assets/checked.png);
+        background-repeat: no-repeat;
+        /* background-size: contain; */
+    }
+    ul li::before{
+        content: "";
+        width: 25px;
+        height: 25px;
+        left: 20px;
+        position: absolute;
+        background-size: contain;
+        background-image: url(assets/unchecked.pnga);
+    }
+    }
+    
+</style>
+<body>
+    <div class="content">
+        <div class="box">
+            <h1 class="heading">Todolist <img src="assets/icon.png" alt=""></h1>
+            <input type="text" placeholder="enter your list" id="input"><button onclick="addmask()" class="button">ADD</button>
+
+            <div >
+                <ul id="listcontent">
+                    <!-- <li class="checked">add mask 1</li>
+                    <li>add mask 2</li> -->
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <script src="dolist.js"></script>
+</body>
+</html>
